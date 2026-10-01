@@ -20,7 +20,6 @@ Access points are discovered automatically, and **each AP is created as its own 
 - Total clients per band (2.4 / 5 / 6 GHz), summed across all AP hosts in group `APs`
 - ICMP ping / loss / response time
 - SNMP traps: AP disassociation, channel changed, radar (DFS) detected
-- RESTCONF: AP config data (`Cisco-IOS-XE-wireless-ap-cfg`), IOS-XE only
 
 **Discovery rules**
 - **WLC AP data**: discovers APs and creates a host for each one (`AP: <name> (<ip>) <location>`) in host group `APs`, linked to `HW Cisco WLC Discovery AP`
@@ -48,7 +47,6 @@ For each AP:
 - SNMP (v2c or v3) enabled on the WLC, reachable from the Zabbix server / proxy
 - `fping` installed on the server / proxy that pings the APs (ICMP items)
 - For SNMP traps: Zabbix SNMP trapper configured, with the WLC sending traps to it
-- For RESTCONF (optional): RESTCONF enabled on the 9800 and a read-only user
 
 ## Installation
 
@@ -74,10 +72,8 @@ For each AP:
 | `{$ICMP_LOSS_WARN_AP}` | `20` | AP ping loss threshold (%) |
 | `{$ICMP_RESPONSE_TIME_WARN_AP}` | `0.30` | AP ping response time threshold (s) |
 | `{$WLC_NAME}` | `wlc.example.com` | FQDN of the WLC |
-| `{$WLC_RESTCONF_USER}` | `zabbix` | RESTCONF username |
-| `{$WLC_RESTCONF_PASS}` | *(empty, secret)* | RESTCONF password, set it on the host |
 
-Set credentials **on the host** as *Secret text* macros. Never put them in the template itself.
+Set the SNMP community or SNMPv3 credentials **on the host** (or as global macros), never in the template itself.
 
 ## Notes
 
@@ -88,4 +84,5 @@ Set credentials **on the host** as *Secret text* macros. Never put them in the t
 ## License
 
 [MIT](LICENSE)
+"# Zabbix-Cisco-WLC-AireOS-Catalyst-9800-" 
 "# Zabbix-Cisco-WLC-AireOS-Catalyst-9800-" 
