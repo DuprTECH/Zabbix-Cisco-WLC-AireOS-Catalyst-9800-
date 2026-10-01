@@ -81,8 +81,17 @@ Set the SNMP community or SNMPv3 credentials **on the host** (or as global macro
 - AP hosts use the AP IP address as the technical host name. If an AP changes its IP, a new host is created and the old one is removed after the LLD lifetime (180 days).
 - Tested on Cisco Catalyst 9800 (IOS-XE 17.x).
 
+## Custom work & support
+
+Need something extra? I can extend or customize this template for your company's needs, for example new metrics, triggers, dashboards, other Cisco models or integration with your environment. Feel free to get in touch: 📧 [info@duprtech.sk](mailto:info@duprtech.sk)
+
+If this template saved you time and you're happy with my work, you can buy me a coffee ☕
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/duprtech)
+
 ## License
 
 [MIT](LICENSE)
+"# Zabbix-Cisco-WLC-AireOS-Catalyst-9800-" 
 "# Zabbix-Cisco-WLC-AireOS-Catalyst-9800-" 
 "# Zabbix-Cisco-WLC-AireOS-Catalyst-9800-" 
