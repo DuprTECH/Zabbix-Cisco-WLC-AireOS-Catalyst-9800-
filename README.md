@@ -3,6 +3,12 @@
 Zabbix 7.4 template for monitoring **Cisco Wireless LAN Controllers** (AireOS and Catalyst 9800 / IOS-XE) over SNMP.
 Access points are discovered automatically, and **each AP is created as its own Zabbix host**, so every AP has its own problems, graphs, inventory and maintenance.
 
+## ✨ Highlights
+
+- 🔌 **CDP neighbor detection**: for every AP the template reads, via CDP, **which switch and which switch port the AP is connected to** (switch name, IP and port). You can see right away where to look when an AP goes down.
+- 🔗 **Automatic dependencies (Python script)**: I also have a **Python script** that works with the Zabbix API. It uses the CDP data to **set dependencies between APs and their upstream switches** automatically, so when a switch fails you get one alert for the switch instead of one for every AP behind it. The script is not part of this repository. If you're interested, contact me at [info@duprtech.sk](mailto:info@duprtech.sk).
+- 🖥️ **Separate host for each AP**: each AP has its own problems, graphs, inventory and maintenance windows.
+
 ## Contents
 
 | File | Description |
@@ -36,7 +42,7 @@ For each AP:
 - Model, serial number, SW / boot version, base and radio MAC, IP, location
 - Site tag, policy tag
 - Per radio (2.4 / 5 / 6 GHz): channel, bandwidth, TX power, number of clients, channel / RX / TX utilization
-- CDP neighbor: switch name, IP and port
+- **CDP neighbor: switch name, IP and port the AP is connected to**
 - ICMP ping / loss / response time to the AP
 
 **Triggers**: AP unreachable, high ping loss / latency, operational status DOWN, PoE power not *full*, AP rebooting repeatedly (1h / 1d), location not set.
@@ -92,6 +98,7 @@ If this template saved you time and you're happy with my work, you can buy me a 
 ## License
 
 [MIT](LICENSE)
+"# Zabbix-Cisco-WLC-AireOS-Catalyst-9800-" 
 "# Zabbix-Cisco-WLC-AireOS-Catalyst-9800-" 
 "# Zabbix-Cisco-WLC-AireOS-Catalyst-9800-" 
 "# Zabbix-Cisco-WLC-AireOS-Catalyst-9800-" 
